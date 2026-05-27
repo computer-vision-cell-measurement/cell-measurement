@@ -65,7 +65,7 @@ def segment_images(input_path, output_path):
         return
 
     open_kernel = np.ones((3, 3), np.uint8)
-    close_kernel = np.ones((5, 5), np.uint8)
+    close_kernel = np.ones((3, 3), np.uint8)
 
     for i, img_path in enumerate(image_files):
         is_first = (i == 0)
@@ -81,7 +81,7 @@ def segment_images(input_path, output_path):
         save_debug_image(blurred, "02_rozmycie_gaussa", is_first, 'segmentation-and-filtration-test')
         
         ret, _ = cv2.threshold(blurred, 0, 255, cv2.THRESH_BINARY + cv2.THRESH_OTSU)
-        milder_threshold = ret * 0.6
+        milder_threshold = ret * 0.8
         _, binary_mask = cv2.threshold(blurred, milder_threshold, 255, cv2.THRESH_BINARY)
         save_debug_image(binary_mask, "03_binaryzacja_otsu", is_first, 'segmentation-and-filtration-test')
 
