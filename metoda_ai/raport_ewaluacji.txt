@@ -1,0 +1,24 @@
+==================================================
+      RAPORT AI: METRYKI I STATYSTYKI KOMÓREK
+==================================================
+Testowanych obrazów: 40
+Zidentyfikowano obiektów łącznie: 2957
+Całkowita liczba rzeczywistych komórek: 3135
+--------------------------------------------------
+ 1. METRYKI SEGMENTACJI (JAKOŚĆ SIECI):
+   * Pixel Dice:       0.9322
+   * Pixel IoU:        0.8751
+   * Object F1:        0.9511
+   * Precision:        0.9797
+   * Recall:           0.9241
+   * Średni błąd liczenia:   5.15 komórek/obraz
+   * Względny błąd liczenia: 6.57%
+   * Wydajność GPU:          0.28 FPS
+--------------------------------------------------
+ 2. STATYSTYKI FIZYCZNE KOMÓREK (MORFOLOGIA):
+   * Najmniejsza pow.: 13 pikseli kwadratowych
+   * Największa pow.:  3160 pikseli kwadratowych
+   * Średnia pow.:     756.6 pikseli kwadratowych
+   * Mediana pow.:     713.0 pikseli kwadratowych
+   * Średni dystans do najbliższego sąsiada: 47.44 pikseli
+==================================================

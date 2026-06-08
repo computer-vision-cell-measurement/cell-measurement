@@ -1,0 +1,10 @@
+# Ignorowane wagi modeli PyTorch
+*.pth
+
+# (Opcjonalnie) Ignoruj też ewentualne inne formaty modeli, jeśli będziesz ich używać
+*.pt
+*.onnx
+
+# Ignoruj cały folder z danymi zdjęciami (żeby nie wgrać tysięcy obrazów na GitHuba!)
+dane/
+__pycache__/
