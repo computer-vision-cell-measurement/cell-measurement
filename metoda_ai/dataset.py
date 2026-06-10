@@ -87,7 +87,7 @@ class CellDataset(Dataset):
             area_tensor = torch.zeros((0,), dtype=torch.float32)
             iscrowd_tensor = torch.zeros((0,), dtype=torch.int64)
         else:
-            # Wypełnione tensory z rygorystycznymi typami danych (wymagane przez Mask R-CNN)
+            # Wypełnione tensory
             boxes_tensor = torch.as_tensor(boxes, dtype=torch.float32)
             labels_tensor = torch.ones((len(boxes),), dtype=torch.int64)
             masks_tensor = torch.as_tensor(np.array(valid_masks, dtype=np.uint8), dtype=torch.uint8)

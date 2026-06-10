@@ -12,7 +12,7 @@ def main():
     device = torch.device('cuda') if torch.cuda.is_available() else torch.device('cpu')
     print(f"Trening uruchomiony na: {device}")
 
-    dataset = CellDataset('dane/train/images', 'dane/train/masks')
+    dataset = CellDataset('metoda_ai/dane/train/images', 'metoda_ai/dane/train/masks')
     
     data_loader = DataLoader(
         dataset, 

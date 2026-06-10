@@ -3,8 +3,8 @@ import numpy as np
 import matplotlib.pyplot as plt
 import time
 import csv
-import math # <-- NOWE: Do obliczeń liczby Pi i pierwiastków
-import cv2  # <-- NOWE: Do pomiaru obwodu komórek (krawędzi maski)
+import math
+import cv2
 from tqdm import tqdm
 from torch.utils.data import DataLoader
 from dataset import CellDataset
@@ -74,11 +74,11 @@ def main():
     device = torch.device('cuda') if torch.cuda.is_available() else torch.device('cpu')
     print(f"Ewaluacja uruchomiona na: {device}")
 
-    test_dataset = CellDataset(images_dir='dane/test/images', masks_dir='dane/test/masks')
+    test_dataset = CellDataset(images_dir='metoda_ai/dane/test/images', masks_dir='metoda_ai/dane/test/masks')
     test_loader = DataLoader(test_dataset, batch_size=1, shuffle=False, collate_fn=collate_fn)
 
     model = get_model_instance_segmentation(num_classes=2)
-    model.load_state_dict(torch.load('mask_rcnn_bbbc039.pth', map_location=device, weights_only=True))
+    model.load_state_dict(torch.load('metoda_ai/mask_rcnn_bbbc039.pth', map_location=device, weights_only=True))
     model.to(device)
     model.eval() 
 
@@ -89,7 +89,7 @@ def main():
     global_areas = []
     global_distances = []
     
-    # --- NOWE: Dodano nagłówki Kolowatosc i Srednica ---
+
     csv_data = [["Nazwa_Obrazu", "ID_Komorki", "Pole_Powierzchni_px", "Srodek_X", "Srodek_Y", "Kolowatosc_0_1", "Srednica_Ekwiwalentna_px"]]
     global_img_idx = 0
 
@@ -135,7 +135,7 @@ def main():
                 global_areas.extend(areas)
                 global_distances.extend(distances)
                 
-                # --- Zbieranie szczegółowych danych do CSV (Wzbogacone) ---
+
                 for cell_id, mask in enumerate(pred_masks_bin):
                     area = mask.sum()
                     y_indices, x_indices = np.where(mask > 0)
@@ -151,12 +151,10 @@ def main():
                         
                         circularity = 0.0
                         if len(contours) > 0:
-                            # Szukamy największego konturu (ignorujemy śmieciowe artefakty)
                             c = max(contours, key=cv2.contourArea)
                             perimeter = cv2.arcLength(c, True)
                             if perimeter > 0:
                                 circularity = (4 * math.pi * area) / (perimeter ** 2)
-                                # Kwadratowe piksele czasem dają wynik lekko > 1.0, obcinamy do perfekcyjnego koła
                                 circularity = min(circularity, 1.0)
                         
                         csv_data.append([

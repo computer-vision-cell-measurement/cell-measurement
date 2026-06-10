@@ -5,7 +5,7 @@ from dataset import CellDataset
 def main():
     print("Ładowanie pierwszego zdjęcia ze zbioru treningowego...")
 
-    dataset = CellDataset('dane/train/images', 'dane/train/masks')
+    dataset = CellDataset('metoda_ai/dane/train/images', 'metoda_ai/dane/train/masks')
     img_tensor, target = dataset[0]
 
     img = img_tensor.permute(1, 2, 0).numpy() * 255
