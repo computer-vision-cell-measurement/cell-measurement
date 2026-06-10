@@ -60,7 +60,8 @@ Zaimplementowany w pełni z wykorzystaniem operacji przetwarzania obrazów i mor
 
 ## Instalacja i konfiguracja
  * **1. Sklonuj repozytorium na swój dysk lokalny:**
-
+git clone [https://github.com/twoje-repozytorium/cell-segmentation-bbbc039.git](https://github.com/twoje-repozytorium/cell-segmentation-bbbc039.git)
+cd cell-segmentation-bbbc039
 * **2. Zainstaluj wymagane pakiety i biblioteki za pomocą menedżera pip:**
     pip install -r requirements.txt
 
