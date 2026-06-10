@@ -1,0 +1,29 @@
+==================================================
+  RAPORT KLASYCZNY: METRYKI I STATYSTYKI KOMÓREK
+==================================================
+Testowanych obrazów: 200
+Zidentyfikowano obiektów łącznie: 19360
+--------------------------------------------------
+
+1. STATYSTYKI FIZYCZNE KOMÓREK (MORFOLOGIA):
+   * Najmniejsza pow.:  6 pikseli kwadratowych
+   * Największa pow.:   353487 pikseli kwadratowych
+   * Średnia pow.:      904.2 pikseli kwadratowych
+   * Mediana pow.:      798.0 pikseli kwadratowych
+   * Odch. std pow.:    4370.9 pikseli kwadratowych
+--------------------------------------------------
+
+2. STATYSTYKI KOŁOWATOŚCI:
+   * Minimalna:   0.010
+   * Maksymalna:  1.100
+   * Średnia:     0.832
+   * Mediana:     0.850
+--------------------------------------------------
+
+3. STATYSTYKI ŚREDNICY:
+   * Minimalna:   2.76 px
+   * Maksymalna:  670.88 px
+   * Średnia:     32.49 px
+   * Mediana:     31.88 px
+==================================================
+
