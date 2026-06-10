@@ -45,17 +45,35 @@ Zaimplementowany w pełni z wykorzystaniem operacji przetwarzania obrazów i mor
 ## 📂 Struktura projektu
 
 ```text
-├── data/
-│   └── BBBC039/            # Surowe zdjęcia mikroskopowe oraz eksperckie maski (.tiff)
-├── outputs/
-│   ├── csv_results/        # Wygenerowane pliki CSV z wyliczonymi cechami komórek
-│   └── plots/              # Wykresy porównawcze i wizualizacje masek segmentacji
-├── src/
-│   ├── classical_watershed.py  # Implementacja potoku klasycznego (Otsu + Watershed)
-│   ├── mask_rcnn_eval.py       # Skrypt do inferencji i ewaluacji modelu Mask R-CNN
-│   └── morphology_features.py  # Moduł obliczający cechy geometryczne obiektów
-├── main.py                 # Główny punkt wejścia do aplikacji (CLI)
-└── requirements.txt        # Lista zależności projektowych
+.
+├── metoda_ai/
+│   ├── dane/
+│   │   ├── test/
+│   │   └── train/
+│   ├── .DS_Store
+│   ├── check_data.py
+│   ├── dataset.py
+│   ├── diagnostyka_ramek.png
+│   ├── evaluate.py
+│   ├── model.py
+│   ├── raport_ewaluacji.txt
+│   ├── train.py
+│   ├── wykres_ewaluacji.png
+│   ├── wykres_ewaluacji_zaawansowany.png
+│   ├── wymiary_komorek.csv
+│   └── wymiary_komorek_excel.xlsx
+├── metoda_klasyczna/
+│   ├── data/
+│   ├── images/
+│   ├── masks/
+│   ├── segmentation-and-filtration-test/
+│   ├── main.py
+│   ├── maski.py
+│   ├── porownanie.py
+│   ├── watershed.py
+│   └── wyniki.py
+├── .gitignore
+└── README.md
 ```
 
 ## Instalacja i konfiguracja
