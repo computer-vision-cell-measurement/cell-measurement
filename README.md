@@ -80,24 +80,11 @@ Zaimplementowany w pełni z wykorzystaniem operacji przetwarzania obrazów i mor
  * **1. Sklonuj repozytorium na swój dysk lokalny:**
 git clone [https://github.com/twoje-repozytorium/cell-segmentation-bbbc039.git](https://github.com/twoje-repozytorium/cell-segmentation-bbbc039.git)(https://github.com/computer-vision-cell-measurement/cell-measurement.git)
 cd cell-segmentation-bbbc039
-* **2. Zainstaluj wymagane pakiety i biblioteki za pomocą menedżera pip:**
-    pip install -r requirements.txt
+* **2. Zainstaluj wymagane pakiety i biblioteki za pomocą menedżera pip**
+    
 
 Wymagane środowisko: Python 3.8 lub nowszy, PyTorch (z obsługą CUDA dla akceleracji GPU przy Mask R-CNN), OpenCV, Scikit-Image, Pandas, Matplotlib.
 
-
-## Uruchomienie programu (Interfejs CLI)
-Główny skrypt main.py obsługuje parametry wiersza poleceń poprzez flagę --mode, sterującą pracą całego systemu.
-
-* **1. Uruchomienie segmentacji klasycznej (Watershed)**
-Przetwarza zbiór testowy potokiem klasycznym, zapisuje mapy kontrolne w przestrzeni HSV z naniesionymi konturami oraz generuje raporty cech fizycznych.
-python main.py --mode watershed
-
-* **2. Uruchomienie inferencji AI (Mask R-CNN)Uruchamia ewaluację zoptymalizowanego modelu głębokiego uczenia PyTorch, dokonując predykcji masek obiektów piksel po pikselu.**
-python main.py --mode mask_rcnn
-
-* **3. Generowanie analizy porównawczejDokonuje bezpośredniego zestawienia obu potoków, porównując ich błędy zliczania, odchylenia pól powierzchni oraz generując zbiorcze wykresy statystyczne w katalogu outputs/plots/.**
-  python main.py --mode compare 
 
 ## Wyniki Eksperymentalne i Ewaluacja
  Bezpośrednie starcie obu systemów na próbie testowej (40 obrazów, 3179 komórek Ground Truth) wykazało unikalną charakterystykę zalet i ograniczeń każdej z metod:  
